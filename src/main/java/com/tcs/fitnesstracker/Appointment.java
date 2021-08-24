@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 @Entity
 public class Appointment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +16,10 @@ public class Appointment {
 	private boolean physioRequired;
 	private String packageName;
 	private int amount;
+	@Transient
+	@JoinColumn
+	@OneToOne(mappedBy="appoinment")
+	private User user;
 	public Integer getAppointmentId() {
 		return appointmentId;
 	}
@@ -43,6 +50,13 @@ public class Appointment {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	
 	
 
