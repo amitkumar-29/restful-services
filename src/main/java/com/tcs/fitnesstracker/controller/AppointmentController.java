@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tcs.fitnesstracker.*;
 import com.tcs.fitnesstracker.service.IAppointmentService;
+import com.tcs.fitnesstracker.exception.*;
+
 
 
 
@@ -55,6 +58,13 @@ public class AppointmentController {
 	public void deleteAppointment(@PathVariable("id") Integer id) {
 		appointService.deleteAppointment(id);
 	}
+	
+	@PutMapping ("/{id}")
+	private void updateUser(@PathVariable("id") Integer id, @RequestBody Appointment appointment) {
+		appointService.updateAppointment(appointment, id);
+		
+	}
+	
 
 
 }

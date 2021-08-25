@@ -10,6 +10,6 @@ public interface IAppointmentService {
 	Iterable<Appointment> getAllAppointments();
 	Optional<Appointment> getAppointment(Integer id);
 	void deleteAppointment(Integer id);
-
+    void updateAppointment(Appointment appintment,Integer id);
 
 }

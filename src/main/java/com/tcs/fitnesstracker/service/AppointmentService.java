@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tcs.fitnesstracker.Appointment;
-import com.tcs.fitnesstracker.AppointmentNotFoundException;
 import com.tcs.fitnesstracker.repository.IAppointmentRepository;
+import com.tcs.fitnesstracker.exception.*;
+
+import org.springframework.util.StringUtils;
 
 
 
@@ -50,6 +52,24 @@ IAppointmentRepository appointmentRepo;
 		}
 		appointmentRepo.deleteById(id);
 
+	}
+	@Override
+	public void updateAppointment(Appointment appointment, Integer id) {
+		Optional<Appointment> appointmentFromDB = appointmentRepo.findById(id);
+		if (!appointmentFromDB.isPresent()) {
+			throw new AppointmentNotFoundException("appointment  does not exist");
+		}
+		Appointment appointment1 = appointmentFromDB.get();
+		if (StringUtils.hasText(appointment.getTrainerName())) {
+			appointment1.setTrainerName(appointment.getTrainerName());
+		}
+		if(StringUtils.hasText(appointment.getPackageName())) {
+			appointment1.setPackageName(appointment.getPackageName());
+		}
+		
+		appointmentRepo.save(appointment1);
+
+	
 	}
 
 }
