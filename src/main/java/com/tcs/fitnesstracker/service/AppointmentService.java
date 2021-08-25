@@ -66,6 +66,14 @@ IAppointmentRepository appointmentRepo;
 		if(StringUtils.hasText(appointment.getPackageName())) {
 			appointment1.setPackageName(appointment.getPackageName());
 		}
+		if(appointment.getAmount()>0)
+			appointment1.setAmount(appointment.getAmount());
+		if(appointment.isPhysioRequired())
+			appointment1.setPhysioRequired(true);
+		else if(appointment1.isPhysioRequired()==true && appointment.isPhysioRequired()==false)
+			appointment1.setPhysioRequired(false);
+
+		
 		
 		appointmentRepo.save(appointment1);
 
