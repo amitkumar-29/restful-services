@@ -1,8 +1,12 @@
-package com.tcs.fitnesstracker;
+package com.tcs.fitnesstracker.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.tcs.fitnesstracker.Appointment;
+import com.tcs.fitnesstracker.AppointmentNotFoundException;
+import com.tcs.fitnesstracker.repository.IAppointmentRepository;
 
 
 

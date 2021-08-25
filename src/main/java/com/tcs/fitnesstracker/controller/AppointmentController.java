@@ -1,4 +1,4 @@
-package com.tcs.fitnesstracker;
+package com.tcs.fitnesstracker.controller;
 
 import java.util.Optional;
 
@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.tcs.fitnesstracker.*;
+import com.tcs.fitnesstracker.service.IAppointmentService;
 
 
 

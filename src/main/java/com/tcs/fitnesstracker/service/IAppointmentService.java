@@ -1,6 +1,8 @@
-package com.tcs.fitnesstracker;
+package com.tcs.fitnesstracker.service;
 
 import java.util.Optional;
+
+import com.tcs.fitnesstracker.Appointment;
 
 
 public interface IAppointmentService {
