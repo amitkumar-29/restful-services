@@ -5,11 +5,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
+@Entity
 public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Integer ID;
-	private String firstName;
+	@NotBlank(message = "first Name is mandatory")
+    private String firstName;
 	private String lastName;
 	private int age;
 	private String Address;
