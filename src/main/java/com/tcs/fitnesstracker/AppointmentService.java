@@ -40,6 +40,10 @@ IAppointmentRepository appointmentRepo;
 	@Override
 	public void deleteAppointment(Integer id) {
 		// TODO Auto-generated method stub
+		Optional<Appointment> appointment = appointmentRepo.findById(id);
+		if (!appointment.isPresent()) {
+			throw new AppointmentNotFoundException("appointment  does not exist");
+		}
 		appointmentRepo.deleteById(id);
 
 	}
