@@ -1,0 +1,6 @@
+projectKey=fitnesstracker
+serverUrl=http://localhost:9000
+serverVersion=8.6.0.39681
+dashboardUrl=http://localhost:9000/dashboard?id=fitnesstracker
+ceTaskId=AXt9O7rWrsq69ejS6lSY
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXt9O7rWrsq69ejS6lSY
