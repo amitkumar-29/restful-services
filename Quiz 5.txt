@@ -1,0 +1,31 @@
+GC
+
+1. Prints: XXYY
+2. c
+3. 9
+4. None of the above
+5. C
+6. 1
+7. None of the above
+8. b
+9. B2
+10.c
+11. a
+
+
+Encapsulation
+
+1. a,d
+2. b,d,f
+3. None of the above
+4. None of the above
+5. a,d
+6. None of the above
+7. c
+8. None of the above
+9. None of the above
+10. d
+
+
+
+
